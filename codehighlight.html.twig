@@ -1,0 +1,49 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+<div class="g-codehighlight {{ particle.css.class }}">
+
+  {% if particle.title %}
+    <h4 class="g-codehighlight-title">{{ particle.title }}</h4>
+  {% endif %}
+
+  <div class="g-codehighlight-wrapper">
+    <div class="g-codehighlight-toolbar">
+      <span class="g-codehighlight-lang">{{ particle.language }}</span>
+      <button class="g-codehighlight-copy" onclick="gCopyCode(this)" title="Copy code">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        Copy
+      </button>
+    </div>
+    <pre class="{{ particle.show_line_numbers ? 'line-numbers' : '' }}"><code class="language-{{ particle.language }}">{{ particle.code | e }}</code></pre>
+  </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+{% if particle.show_line_numbers %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+{% endif %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+{% if particle.show_line_numbers %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+{% endif %}
+
+<script>
+function gCopyCode(btn) {
+  var code = btn.closest('.g-codehighlight-wrapper').querySelector('code').innerText;
+  navigator.clipboard.writeText(code).then(function() {
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy';
+    }, 2000);
+  });
+}
+</script>
+{% endblock %}

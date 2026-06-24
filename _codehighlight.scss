@@ -1,0 +1,84 @@
+.g-codehighlight {
+  margin: 1.5rem 0;
+
+  .g-codehighlight-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+    opacity: 0.7;
+  }
+
+  .g-codehighlight-wrapper {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .g-codehighlight-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 1rem;
+    background: #1a1a2e;
+
+    .g-codehighlight-lang {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #7c8db5;
+      font-family: monospace;
+    }
+
+    .g-codehighlight-copy {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: transparent;
+      border: 1px solid #3a3a5c;
+      color: #7c8db5;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: #7c8db5;
+        color: #c0caf5;
+      }
+
+      &.copied {
+        border-color: #4ade80;
+        color: #4ade80;
+      }
+    }
+  }
+
+  pre {
+    border-radius: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Flat overrides — high specificity to beat CDN stylesheet */
+.g-codehighlight .line-numbers-rows {
+  border-right: none !important;
+}
+
+.g-codehighlight .line-numbers-rows > span::before {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.g-codehighlight pre[class*="language-"] {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.g-codehighlight code[class*="language-"] {
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
