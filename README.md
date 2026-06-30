@@ -2,6 +2,8 @@
 
 A Gantry 5 Particle that lets you display beautifully formatted, syntax-highlighted code blocks on your Joomla or WordPress site — powered by [Prism.js](https://prismjs.com/).
 
+<img width="478" height="269" alt="2026" src="https://github.com/user-attachments/assets/c1136277-b1b1-4ae2-a63c-66ce7bf17529" />
+
 ---
 
 ## Features
