@@ -1,8 +1,10 @@
 # Syntax Highlighting for Gantry 5
 
-A Gantry 5 Particle that lets you display beautifully formatted, syntax-highlighted code blocks on your Joomla or WordPress site — powered by [Prism.js](https://prismjs.com/).
+A Gantry 5 Particle that lets you display beautifully formatted, syntax-highlighted code blocks on your Joomla site — powered by [Prism.js](https://prismjs.com/).
 
-<img width="478" height="269" alt="2026" src="https://github.com/user-attachments/assets/c1136277-b1b1-4ae2-a63c-66ce7bf17529" />
+---
+
+<img width="408" height="265" alt="syntax-highlight-front-page" src="https://github.com/user-attachments/assets/33acbd6b-5847-480b-98c5-543d0d5e0e74" />
 
 ---
 
@@ -102,6 +104,4 @@ Prism.js and its plugins are loaded from cdnjs.cloudflare.com at runtime — no 
 
 ---
 
-## License
-
-MIT — free to use and modify.
+<img width="603" height="575" alt="syntax-highlight-backend" src="https://github.com/user-attachments/assets/40f50814-73b3-4826-9b06-0305a67c7e58" />
